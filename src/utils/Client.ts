@@ -3,7 +3,7 @@ import { Package } from "./Packages";
 
 export type ClientMode = "stable" | "canary" | "dev";
 
-export default class Hyview extends Client {
+export default class Ramos extends Client {
 
     public prefix: string;
     public mode: ClientMode;
