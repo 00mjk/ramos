@@ -60,3 +60,5 @@ Ramos#6914 has logged in using Ramos.
 
 ## Support
 Join our discord: https://discord.gg/ySbSesFNB5
+
+## alright thats us done, peace out
