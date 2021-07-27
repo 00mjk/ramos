@@ -180,12 +180,20 @@ client.on('message', async (message: Discord.Message) => {
                 if (asset === undefined) {
                     console.log(chalk.red("uh oh stinky: the database returned an undefined record"))
                 } else {
-                    const embed = new Discord.MessageEmbed()
-                    .setTitle("Your order of " + asset.purchased)
-                    .setDescription(`Your order is in the \`${asset.state}\` phase.`)
-                    .setColor(Ramos.Constants.ColorCodes.Success)
-    
-                    message.channel.send(embed)
+			if (asset.state === "cancelled") {
+			    const embed = new Discord.MessageEmbed()
+				    .setTitle("This order has been cancelled.)
+				    .setColor(Ramos.Constants.ColorCodes.Danger)
+
+			    message.channel.send(embed)
+			} else {
+			    const embed = new Discord.MessageEmbed()
+				    .setTitle("Your order of " + asset.purchased)
+				    .setDescription(`Your order is in the \`${asset.state}\` phase.`)
+				    .setColor(Ramos.Constants.ColorCodes.Success)
+
+			    message.channel.send(embed)
+			}
                 }
             }).catch((e: any) => {
                 console.log(chalk.red("uh oh stinky: " + e))
@@ -217,6 +225,18 @@ client.on('message', async (message: Discord.Message) => {
         }
 
     }
+	
+    else if (command === "cancelorder") {
+	
+        const order = await Order.findOne({ id: args[0] })
+
+        order.state = "cancelled"
+
+        await order.save().then((newOrder: any) => {
+            message.reply("this order was succesfully cancelled ")
+        })
+	    
+    }
 
     /**
      * The below commands are for use by staff users only.
@@ -224,7 +244,7 @@ client.on('message', async (message: Discord.Message) => {
 
     else if (command === "nextphase" || command === "np") {
 
-        const order = await Order.findOne({ id: args[0]})
+        const order = await Order.findOne({ id: args[0] })
 
         order.state = nextState(order.state);
 
