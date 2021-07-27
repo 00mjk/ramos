@@ -72,6 +72,8 @@ If you didn't:
 Ramos#6914 has logged in using Ramos.
 ```
 
+( 7: You're going to want to add your packages in src/package.ts - if you know a little about TypeScript it should be relatively easy to understand )
+
 ## Support
 Join our discord: https://discord.gg/ySbSesFNB5
 
