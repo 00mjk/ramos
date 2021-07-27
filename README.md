@@ -20,6 +20,8 @@ Ramos is developed & maintained by hanatic, plus the help of anyone else who tur
 - Git installed locally
 - NPM installed locally
 - TSC && TS-node installed locally (`npm i tsc ts-node -g`)
+- MongoDB installed locally
+- Either a local MongoDB server or an instance in the cloud (https://atlas.mongodb.com)
 
 ## Installing
 
@@ -29,7 +31,7 @@ git clone https://github.com/hanatic/ramos
 cd ramos
 ```
 
-2: Add your token to line 10 of the src/index.ts
+2: Add your token to line 10 of src/index.ts
 
 ```js
 // ...
@@ -39,12 +41,24 @@ import packages from './package';
 // ...
 ```
 
-3: (optional) Install `ts-node-dev` - this helps you reload the TypeScript code - useful if you plan to edit it.
+3: Add your Mongo URL in line 16 of src/index.ts
+
+```js
+// ...
+mongoose.connect("<YOUR URL WILL GO HERE>", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true               // to handle collection.ensureIndex is deprecated
+})
+// ...
+```
+
+4: (optional) Install `ts-node-dev` - this helps you reload the TypeScript code - useful if you plan to edit it.
 ```
 npm i -g ts-node-dev
 ```
 
-4: Run the app: if you installed ts-node-dev:
+5: Run the app: if you installed ts-node-dev:
   ```
   npm run dev
   ```
@@ -53,7 +67,7 @@ If you didn't:
   ts-node src/index.ts
   ```
   
-5: Make sure it's working: you should get console output like this (tag will be different)
+6: Make sure it's working: you should get console output like this (tag will be different)
 ```
 Ramos#6914 has logged in using Ramos.
 ```
