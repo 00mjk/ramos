@@ -1,7 +1,8 @@
 <div align="center">
-  <img src="https://i.imgur.com/vfliY0x.png" width="100"> </img>
+  <img src="https://i.imgur.com/vfliY0x.png" width="100"></img>
 </div>
 <h2 align="center">Ramos: an open-source bot for creating shopping packages in your Discord community</h2>
+<b align="center">Still in dev phase, more code coming soon!</b>
   
 <hr />
   
