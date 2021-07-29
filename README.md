@@ -25,10 +25,11 @@ Ramos is developed & maintained by hanatic, plus the help of anyone else who tur
 
 ## Installing
 
-1: Clone the git repository and enter it in your terminal
+1: Clone the git repository, enter it in your terminal and install the dependencies
 ```
 git clone https://github.com/hanatic/ramos
 cd ramos
+npm install
 ```
 
 2: Add your token to line 10 of src/index.ts
