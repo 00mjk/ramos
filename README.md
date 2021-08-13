@@ -20,7 +20,7 @@ Ramos is developed & maintained by hanatic, plus the help of anyone else who tur
 - Git installed locally
 - NPM installed locally
 - TSC && TS-node installed locally (`npm i tsc ts-node -g`)
-- MongoDB installed locally
+- MongoDB client installed locally
 - Either a local MongoDB server or an instance in the cloud (https://atlas.mongodb.com)
 
 ## Installing
