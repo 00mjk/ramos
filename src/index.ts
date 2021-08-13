@@ -182,7 +182,7 @@ client.on('message', async (message: Discord.Message) => {
                 } else {
 			if (asset.state === "cancelled") {
 			    const embed = new Discord.MessageEmbed()
-				    .setTitle("This order has been cancelled.)
+				    .setTitle("This order has been cancelled.")
 				    .setColor(Ramos.Constants.ColorCodes.Danger)
 
 			    message.channel.send(embed)
